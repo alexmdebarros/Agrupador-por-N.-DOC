@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrupador Brabo - Processamento de Extratos</title>
+    <title>Agrupador Financeiro - Processamento de Extratos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <style>
@@ -247,19 +247,19 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h1>AGRUPADOR BRABO</h1>
-            <p>Created by Alex</p>
+            <h1>AGRUPADOR FINANCEIRO</h1>
+            <p>Processamento de extratos Magalu</p>
         </div>
         
         <div class="chat-messages" id="chat-messages">
             <div class="message bot-message">
-                E aí, firmeza? Sou o Agrupador Brabo! 💪
+                Olá! Sou o assistente de processamento de extratos.
             </div>
             <div class="message bot-message">
-                Tô aqui pra resolver seu problema com esses extratos chatos! Manda bala com o arquivo que eu resolvo!
+                Posso ajudar você a agrupar e analisar seus extratos financeiros de forma eficiente.
             </div>
             <div class="message bot-message">
-                Bora trabalhar? Me manda esse CSV aí que eu faço a mágica acontecer! ✨
+                Por favor, envie o arquivo CSV que deseja processar.
             </div>
         </div>
         
@@ -278,50 +278,57 @@
     </div>
 
     <script>
-        // Mensagens aleatórias no estilo "brabo"
+        // Mensagens atualizadas (mais formais mas ainda descontraídas)
         const welcomeMessages = [
-            "E aí, firmeza? Sou o Agrupador Brabo! 💪",
-            "Fala tu! O brabo dos agrupamentos chegou! 😎",
-            "Salve! Tá precisando agrupar uns trem? Tô dentro! 🔥",
-            "Opa! O Agrupador Brabo na área! Bora resolver isso! 💼",
-            "E ai meu consagrado! Pronto pra agrupar uns negócio? 💰"
+            "Olá! Sou o assistente de processamento de extratos.",
+            "Bem-vindo! Estou pronto para ajudar com seus extratos.",
+            "Oi! Vamos trabalhar nesses extratos juntos?",
+            "Olá! Pronto para otimizar seus processos financeiros.",
+            "Saudações! Sou seu assistente de análise de extratos."
         ];
         
         const fileRequestMessages = [
-            "Manda o CSV aí que eu começo a trabalhar! 📤",
-            "Cadê o arquivo, meu patrão? Tô esperando aqui! 😤",
-            "Clica nesse botão e manda o CSV pra cá! 📎",
-            "Vamo que vamo! Solta o arquivo aí! 📤",
-            "Tá esperando o quê? Manda o CSV! 📂"
+            "Por favor, envie o arquivo CSV para análise.",
+            "Estou aguardando o arquivo para começar o processamento.",
+            "Clique no botão para enviar seu arquivo CSV.",
+            "Vamos começar? Envie seu arquivo quando estiver pronto.",
+            "Estou preparado para receber seu arquivo de extratos."
         ];
         
         const processingMessages = [
-            "Peguei teu arquivo! Vou meter o louco agora! ⚙️",
-            "Arquivo recebido! Hora de trabalhar... 🔍",
-            "Valeu pelo arquivo! Agora deixa comigo! 😎",
-            "Arquivo anexado! Ligando os turbinos... ⏳",
-            "Beleza, peguei o arquivo! Vou ver esse trem! 👀"
+            "Arquivo recebido! Iniciando análise...",
+            "Processando seus dados, por favor aguarde.",
+            "Começando a trabalhar no seu arquivo agora.",
+            "Recebi seu arquivo. Iniciando processamento...",
+            "Analisando os dados do extrato enviado."
         ];
         
         const stepMessages = [
-            "Tô processando os dados... segura aí! ⏳",
-            "Analisando as parada... 💰",
-            "Calculando os bagulho... 🧮",
-            "Agrupando por documento... 📑",
-            "Filtrando os código... 🔎",
-            "Convertendo os valor... 🔄",
-            "Somando tudo... ➕",
-            "Verificando os grupo... ✅",
-            "Criando arquivo final... 💾",
-            "Quase lá, meu chapa! Só mais um cadim... 😅"
+            "Processando dados financeiros...",
+            "Analisando transações...",
+            "Agrupando por documento...",
+            "Calculando valores...",
+            "Verificando códigos de operação...",
+            "Aplicando regras de dedução...",
+            "Gerando relatório consolidado...",
+            "Quase terminando...",
+            "Finalizando processamento..."
         ];
         
         const successMessages = [
-            "Prontinho, chefe! Terminei aqui! 🎉",
-            "Concluído! Pode pegar o resultado! 😎",
-            "Feito! Arquivo pronto pra download! 👍",
-            "Cabô, meu patrão! Baixa aí! 💾",
-            "Sucesso! Terminei o trampo! 💪"
+            "Processamento concluído com sucesso!",
+            "Relatório pronto para download.",
+            "Análise finalizada. Você pode baixar os resultados.",
+            "Tudo pronto! Seus dados foram processados.",
+            "Concluído! O arquivo de resultados está disponível."
+        ];
+        
+        const errorMessages = [
+            "Ops! O arquivo precisa ser no formato CSV.",
+            "Parece que o arquivo não está no formato correto.",
+            "Houve um problema ao processar o arquivo.",
+            "Não consegui ler o arquivo. Verifique o formato.",
+            "Erro no processamento. Por favor, tente novamente."
         ];
         
         // Função para obter uma mensagem aleatória
@@ -368,7 +375,7 @@
             statusMessage.textContent = text;
         }
         
-        // Processa o arquivo CSV
+        // Processa o arquivo CSV conforme a lógica do Python
         function processCSV(file) {
             return new Promise((resolve, reject) => {
                 Papa.parse(file, {
@@ -393,13 +400,7 @@
                             }
                         }
                         
-                        // Função para filtrar grupos com 1318, 1321 e 1322
-                        function grupoValido(grupo) {
-                            const codigos = grupo.map(item => item['CD.OPER']);
-                            return codigos.includes('1318') && codigos.includes('1321') && codigos.includes('1322');
-                        }
-                        
-                        // Agrupa por NR. DOC e filtra
+                        // Agrupa por NR. DOC
                         const grupos = {};
                         for (const row of data) {
                             if (!grupos[row['NR. DOC']]) {
@@ -409,23 +410,87 @@
                         }
                         
                         const resultados = [];
-                        for (const [nrDoc, grupo] of Object.entries(grupos)) {
-                            if (grupoValido(grupo)) {
-                                const creditoTotal = grupo.reduce((sum, row) => sum + row['CREDITO'], 0);
-                                const debitoTotal = grupo.reduce((sum, row) => sum + row['DEBITO'], 0);
-                                const diferenca = creditoTotal - debitoTotal;
+                        
+                        for (const [nr_doc, grupo] of Object.entries(grupos)) {
+                            const tem_1318 = grupo.some(item => item['CD.OPER'] === '1318');
+                            const tem_1321 = grupo.some(item => item['CD.OPER'] === '1321');
+                            const tem_1322 = grupo.some(item => item['CD.OPER'] === '1322');
+                            const tem_1326 = grupo.some(item => item['CD.OPER'] === '1326');
+                            
+                            // Ignora grupos solitários
+                            if (!((tem_1318 && tem_1321 && tem_1322) || (tem_1318 && tem_1326))) {
+                                continue;
+                            }
+                            
+                            // Processa grupos válidos
+                            if (tem_1318) {
+                                const todos_1318 = grupo.filter(item => item['CD.OPER'] === '1318');
+                                
+                                let LIQ_MARKETPLACE = 0;
+                                let BX_MARKETPLACE = 0;
+                                let DIFERENCA_BX_MANUAL = 0;
+                                let credito_total = 0;
+                                
+                                // Quando tem 1326: aplica regra especial
+                                if (tem_1326) {
+                                    const primeiro_1318 = todos_1318[0];
+                                    const outros_1318 = todos_1318.slice(1);
+                                    
+                                    LIQ_MARKETPLACE = primeiro_1318['CREDITO'];
+                                    BX_MARKETPLACE = grupo.filter(item => item['CD.OPER'] === '1326')
+                                        .reduce((sum, item) => sum + item['DEBITO'], 0);
+                                    DIFERENCA_BX_MANUAL = LIQ_MARKETPLACE - BX_MARKETPLACE;
+                                    
+                                    // CRÉDITO = outros 1318 + 1322 (se existir)
+                                    credito_total = outros_1318.reduce((sum, item) => sum + item['CREDITO'], 0);
+                                    if (tem_1322) {
+                                        credito_total += grupo.filter(item => item['CD.OPER'] === '1322')
+                                            .reduce((sum, item) => sum + item['CREDITO'], 0);
+                                    }
+                                } 
+                                // Quando não tem 1326: inclui todos 1318 no CRÉDITO
+                                else {
+                                    // CRÉDITO = todos 1318 + 1322
+                                    credito_total = todos_1318.reduce((sum, item) => sum + item['CREDITO'], 0);
+                                    if (tem_1322) {
+                                        credito_total += grupo.filter(item => item['CD.OPER'] === '1322')
+                                            .reduce((sum, item) => sum + item['CREDITO'], 0);
+                                    }
+                                }
+                                
+                                // Calcula DÉBITO (1321 se existir)
+                                const debito_total = tem_1321 ? 
+                                    grupo.filter(item => item['CD.OPER'] === '1321')
+                                        .reduce((sum, item) => sum + item['DEBITO'], 0) : 0;
+                                
+                                // Diferença final
+                                const DIFERENCA_TX_COMISSAO = (DIFERENCA_BX_MANUAL + credito_total) - debito_total;
                                 
                                 resultados.push({
-                                    'NR. DOC': nrDoc,
-                                    'CREDITO': creditoTotal.toFixed(2).replace('.', ','),
-                                    'DEBITO': debitoTotal.toFixed(2).replace('.', ','),
-                                    'DIFERENCA': diferenca.toFixed(2).replace('.', ',')
+                                    'NR. DOC': nr_doc,
+                                    'CREDITO': credito_total.toFixed(2),
+                                    'DEBITO': debito_total.toFixed(2),
+                                    'DIFERENCA_TX-COMISSAO': DIFERENCA_TX_COMISSAO.toFixed(2),
+                                    'LIQ_MARKETPLACE': LIQ_MARKETPLACE.toFixed(2),
+                                    'BX_MARKETPLACE': BX_MARKETPLACE.toFixed(2),
+                                    'DIFERENCA_BX-MANUAL': DIFERENCA_BX_MANUAL.toFixed(2)
                                 });
                             }
                         }
                         
+                        // Formata os valores no padrão brasileiro
+                        const resultadosFormatados = resultados.map(item => {
+                            const novoItem = {...item};
+                            for (const key in novoItem) {
+                                if (key !== 'NR. DOC' && !isNaN(novoItem[key])) {
+                                    novoItem[key] = novoItem[key].replace('.', ',');
+                                }
+                            }
+                            return novoItem;
+                        });
+                        
                         // Converte para CSV
-                        const csv = Papa.unparse(resultados, {
+                        const csv = Papa.unparse(resultadosFormatados, {
                             delimiter: ";",
                             header: true
                         });
@@ -439,14 +504,14 @@
             });
         }
         
-        // Simula processamento com barra de progresso
+        // Simula processamento com barra de progresso (tempo reduzido)
         function simulateProcessing() {
             let step = 0;
             const totalSteps = 6;
             const progressBar = document.createElement('div');
             progressBar.className = 'progress-container';
             progressBar.innerHTML = `
-                <div>Trampando no seu arquivo...</div>
+                <div>Processando seu arquivo...</div>
                 <div class="progress-bar">
                     <div class="progress-fill" id="progress-fill"></div>
                 </div>
@@ -468,12 +533,12 @@
                         if (step === totalSteps) {
                             clearInterval(processInterval);
                         }
-                    }, 1000);
+                    }, 800); // Tempo reduzido
                 }
-            }, 2000);
+            }, 1500); // Tempo reduzido
             
             return new Promise(resolve => {
-                setTimeout(resolve, totalSteps * 2000);
+                setTimeout(resolve, totalSteps * 1500);
             });
         }
         
@@ -487,13 +552,13 @@
                     showTypingIndicator();
                     setTimeout(() => {
                         hideTypingIndicator();
-                        addMessage('Ih rapaz! Isso aí não é CSV não! Manda direito!', 'bot');
-                    }, 1000);
+                        addMessage(getRandomMessage(errorMessages), 'bot');
+                    }, 800);
                     return;
                 }
                 
                 // Adicionar mensagem do usuário
-                addMessage(`Mandei o arquivo: ${file.name}`, 'user');
+                addMessage(`Enviei o arquivo: ${file.name}`, 'user');
                 
                 // Processar arquivo
                 downloadButton.classList.add('hidden');
@@ -529,12 +594,13 @@
                                 document.body.appendChild(a);
                                 a.click();
                                 document.body.removeChild(a);
+                                URL.revokeObjectURL(url);
                             };
                         });
-                    }, 1500);
+                    }, 800); // Tempo reduzido
                 } catch (error) {
                     hideTypingIndicator();
-                    addMessage('Deu ruim aqui, meu patrão! O arquivo tá zoado!', 'bot');
+                    addMessage(getRandomMessage(errorMessages), 'bot');
                     updateStatus('Erro no processamento');
                     console.error(error);
                 }
